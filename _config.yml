@@ -1,10 +1,7 @@
 # This is the default format. 
 # For more see: https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink: /:categories/:year/:month/:day/:title 
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-auto: true
-pygments: true
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
@@ -26,7 +23,7 @@ author :
 # Else if you are pushing to username.github.com, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : http://username.github.com
+production_url : http://qct.github.com
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
@@ -123,4 +120,32 @@ JB :
   # and include your custom code. Your custom file must be defined at:
   #   ./_includes/custom/[HELPER]
   # where [HELPER] is the name of the helper you are overriding.
+
+
+safe:        false
+auto:        false
+server:      false
+server_port: 4000
+baseurl:    /
+url: http://qct.github.com
+
+source:      .
+destination: ./_site
+plugins:     ./_plugins
+
+future:      true
+lsi:         false
+pygments:    false
+markdown:    maruku
+permalink:   date
+
+maruku:
+ use_tex: false
+ use_divs: false
+ png_engine: blahtex
+ png_dir: images/latex
+ png_url: /images/latex
+
+rdiscount:
+ extensions: []
   
