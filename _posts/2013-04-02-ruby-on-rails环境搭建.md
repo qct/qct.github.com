@@ -12,7 +12,7 @@ tags: [ruby rails]
 
 -----------------------------------------------------
 
-<!--![Ruby On Rails](/asserts/images/rails.png  "Ruby On Rails")-->
+![Ruby On Rails](/assets/images/rails.png  "Ruby On Rails")
 
 **前言**
 
