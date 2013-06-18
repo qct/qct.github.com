@@ -1,9 +1,11 @@
 ---
 layout: page
 title: "Hello World"
-description: ""
-category: 
-tags: []
+description: "Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
+
+Complete usage and documentation available at: [Jekyll Bootstrap](http://jekyllbootstrap.com)"
+category: 技术
+tags: [hello world]
 ---
 {% include JB/setup %}
 

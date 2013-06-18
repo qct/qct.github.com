@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "速度与激情2 JavaScript编译器如何工作"
-description: ""
-category: 
-tags: []
+description: "当我们谈论JavaScript引擎的时候，通常指的是它的编译器，一个把人类可读的源代码（本文中指JavaScript）翻译成机器可读的指令的程序。如果你还没考虑过你的代码在运行时会发生什么，那么这听起来可能相当神奇，但编译本质上只是一个翻译练习，让代码运行的快才是神奇的。  
+"
+category: 技术
+tags: [javscript]
 ---
 {% include JB/setup %}
 
