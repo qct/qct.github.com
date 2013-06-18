@@ -1,11 +1,12 @@
 ---
-layout: post
+layout: page
 title: "Hello World"
 description: ""
 category: 
 tags: []
 ---
 {% include JB/setup %}
+
 
 Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
 
