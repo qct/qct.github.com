@@ -3,7 +3,7 @@ layout: post
 title: "Ruby On Rails环境搭建"
 description: "[Ruby On Rails](http://rubyonrails.org/ 'Ruby On Rails')是最流行和体验最好的敏捷开发WEB框架（没有之一），介绍性的内容这里就不赘述了。本文介绍下Ruby On Rails环境的搭建流程。"
 category: 技术
-tags: [ruby rails]
+tags: [ruby on rails]
 ---
 {% include JB/setup %}
 
