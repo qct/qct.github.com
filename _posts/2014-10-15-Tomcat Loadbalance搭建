@@ -3,7 +3,7 @@ layout: post
 title: "Tomcat Loadbalance 搭建"
 description: "先说下系统的架构，两台nginx服务器做HA，反向代理到后面两台tomcat做loadbalance。   "
 category: 技术
-tags: [linux]
+tags: [linux tomcat ]
 ---
 {% include JB/setup %}
 
