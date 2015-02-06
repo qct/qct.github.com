@@ -11,6 +11,7 @@ tags: [linux, tomcat, java, loadbalance]
 
 1. 配置文件 /etc/nginx/nginx.conf：   
 
+
 	user  nginx;
 	worker_processes  8;
 
@@ -128,3 +129,5 @@ tags: [linux, tomcat, java, loadbalance]
 			proxy_temp_file_write_size  64k;    #设定缓存文件夹大小，大于这个值，将从upstream服务器传
 		}
 	}
+
+
