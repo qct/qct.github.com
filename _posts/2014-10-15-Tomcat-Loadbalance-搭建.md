@@ -9,7 +9,7 @@ tags: [linux, tomcat, java, loadbalance]
 
 先说下系统的架构，两台nginx服务器做HA，反向代理到后面两台tomcat做loadbalance。   
 
-### *1. 配置文件 /etc/nginx/nginx.conf：   *
+### *1. 配置文件 /etc/nginx/nginx.conf：*
 
 
         user  nginx;
@@ -72,7 +72,7 @@ tags: [linux, tomcat, java, loadbalance]
 		include /etc/nginx/conf.d/*.conf;
         }
 		   
-### *2. 配置文件 /etc/nginx/conf.d/virtual.conf：   *
+### *2. 配置文件 /etc/nginx/conf.d/virtual.conf：*
 
         #
         # A virtual host using mix of IP-, name-, and port-based configuration
