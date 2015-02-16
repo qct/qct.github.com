@@ -1,9 +1,7 @@
 ---
 layout: post
 title: "Nginx Keepalived 安装配置"
-description: "## 1. 安装keepalived
-
-`yum install -y gcc openssl-devel popt-devel libnl-devel kernel-devel`    "
+description: "1. 安装keepalived   `yum install -y gcc openssl-devel popt-devel libnl-devel kernel-devel`    "
 category: 技术
 tags: [linux, tomcat, java, loadbalance]
 ---
