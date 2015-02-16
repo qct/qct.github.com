@@ -70,31 +70,31 @@ tags: [linux, tomcat, java, loadbalance]
 		}
 
 		include /etc/nginx/conf.d/*.conf;
-	}
+        }
 		   
 2. 配置文件 /etc/nginx/conf.d/virtual.conf：   
 
-	\#
-	\# A virtual host using mix of IP-, name-, and port-based configuration
-	\#
-
-	\#server {
-	\#    listen       8000;
-	\#    listen       somename:8080;
-	\#    server_name  somename  alias  another.alias;
-
-	\#    location / {
-	\#        root   html;
-	\#        index  index.html index.htm;
-	\#    }
-	\#}
-
-
-	server {
-		listen       80;
-		server_name xxx.com;
-
-		#error_page 405 =200 @405;
+        \#
+        \# A virtual host using mix of IP-, name-, and port-based configuration
+        \#
+        
+        \#server {
+        \#    listen       8000;
+        \#    listen       somename:8080;
+        \#    server_name  somename  alias  another.alias;
+        
+        \#    location / {
+        \#        root   html;
+        \#        index  index.html index.htm;
+        \#    }
+        \#}
+        
+        
+        server {
+        	listen       80;
+        	server_name xxx.com;
+        
+        	#error_page 405 =200 @405;
 		#location @405 {
 		#    proxy_pass http://10.22.205.102:8080;
 		#}
