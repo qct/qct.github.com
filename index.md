@@ -1,6 +1,6 @@
 ---
 layout: page
-title: My World, My Dream
+title: DEL的技术分享
 tagline: Supporting tagline
 ---
 {% include JB/setup %}
