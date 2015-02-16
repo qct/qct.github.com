@@ -1,7 +1,9 @@
 ---
 layout: post
 title: "Nginx Keepalived 安装配置"
-description: "先说下系统的架构，两台nginx服务器做HA，反向代理到后面两台tomcat做loadbalance。   "
+description: "## 1. 安装keepalived
+
+`yum install -y gcc openssl-devel popt-devel libnl-devel kernel-devel`    "
 category: 技术
 tags: [linux, tomcat, java, loadbalance]
 ---
