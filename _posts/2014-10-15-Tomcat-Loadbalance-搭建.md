@@ -74,20 +74,20 @@ tags: [linux, tomcat, java, loadbalance]
 		   
 2. 配置文件 /etc/nginx/conf.d/virtual.conf：   
 
-        \#
-        \# A virtual host using mix of IP-, name-, and port-based configuration
-        \#
+        #
+        # A virtual host using mix of IP-, name-, and port-based configuration
+        #
         
-        \#server {
-        \#    listen       8000;
-        \#    listen       somename:8080;
-        \#    server_name  somename  alias  another.alias;
+        #server {
+        #    listen       8000;
+        #    listen       somename:8080;
+        #    server_name  somename  alias  another.alias;
         
-        \#    location / {
-        \#        root   html;
-        \#        index  index.html index.htm;
-        \#    }
-        \#}
+        #    location / {
+        #        root   html;
+        #        index  index.html index.htm;
+        #    }
+        #}
         
         
         server {
@@ -129,4 +129,4 @@ tags: [linux, tomcat, java, loadbalance]
 			proxy_busy_buffers_size     64k;    #高负荷下缓冲大小（proxy_buffers*2）
 			proxy_temp_file_write_size  64k;    #设定缓存文件夹大小，大于这个值，将从upstream服务器传
 		}
-	}
+        }
