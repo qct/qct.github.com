@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "Tomcat Loadbalance 搭建"
-description: "先说下系统的架构，两台nginx服务器做HA，反向代理到后面两台tomcat做loadbalance。   "
+description: "先说下系统的架构，两台nginx服务器做HA，反向代理到后面两台tomcat做loadbalance。两台nginx做HA   "
 category: 技术
 tags: [linux, tomcat, java, loadbalance]
 ---
 {% include JB/setup %}
 
-先说下系统的架构，两台nginx服务器做HA，反向代理到后面两台tomcat做loadbalance。   
+**先说下系统的架构，两台nginx服务器做HA，反向代理到后面两台tomcat做loadbalance。两台nginx做HA**   
 
 ### *1. 配置文件 /etc/nginx/nginx.conf：*
 
