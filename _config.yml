@@ -6,7 +6,7 @@ exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : MY
+title : 涛涛的技术沙龙
 tagline: Site Tagline
 author :
   name : qct
