@@ -7,9 +7,9 @@ tags: [linux, tomcat, java, loadbalance]
 ---
 {% include JB/setup %}
 
-## 安装keepalived
+## 1. 安装keepalived
 
-·yum install -y gcc openssl-devel popt-devel libnl-devel kernel-devel·      
+`yum install -y gcc openssl-devel popt-devel libnl-devel kernel-devel`      
 
     wget http://www.keepalived.org/software/keepalived-1.2.2.tar.gz
     tar xzf keepalived-1.2.2.tar.gz
@@ -24,9 +24,11 @@ tags: [linux, tomcat, java, loadbalance]
     mkdir /etc/keepalived 
     ln -s /usr/local/sbin/keepalived /usr/sbin/
 
-## keepalived 配置,master_IP: 10.22.205.111, slave_IP:10.22.205.112, VIP:10.22.205.110
+## 2. keepalived 配置
 
-**master:/etc/keepalived/keepalived.conf**    
+#### **master_IP: 10.22.205.111, slave_IP:10.22.205.112, VIP:10.22.205.110**   
+
+### **master:/etc/keepalived/keepalived.conf**    
 
     global_defs {
        notification_email {
@@ -61,7 +63,7 @@ tags: [linux, tomcat, java, loadbalance]
         }
     }
 		   
-**slave:/etc/keepalived/keepalived.conf**    
+### **slave:/etc/keepalived/keepalived.conf**    
 
     global_defs {
        notification_email {
@@ -97,7 +99,7 @@ tags: [linux, tomcat, java, loadbalance]
     }
 
 
-**监控脚本,主从都要**   
+### **监控脚本,主从都要**   
 
     vi /opt/nginx_pid.sh
     #!/bin/bash
