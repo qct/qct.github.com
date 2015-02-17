@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "ApacheMQ LevelDB 集群 安装配置"
-description: "1. 安装keepalived   `yum install -y gcc openssl-devel popt-devel libnl-devel kernel-devel`    "
+description: "**LevelDB是Apache activeMQ 5.9开始推荐的集群部署方式，下面采用3台来部署activeMQ 的 LevelDB 集群**"
 category: 技术
 tags: [activeMQ, levelDB]
 ---
