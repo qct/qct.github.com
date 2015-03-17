@@ -17,7 +17,7 @@ tags: [java, jvm, tomcat]
 4. PermSize: 永久区，物理内存的1/64   
 5. MaxPermSize: 永久区最大值，物理内存的1/4   
 
-`JAVA_OPTS="$JAVA_OPTS -server -Xms8g -Xmx8g -Xmn4g -XX:PermSize=1g -XX:MaxPermSize=2g -verbose:gc -Xloggc:${CATALINA_HOME}/logs/gc.log`date +%Y-%m-%d-%H-%M` -XX:+UseConcMarkSweepGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -noclassgc"`
+`JAVA_OPTS="$JAVA_OPTS -server -Xms8g -Xmx8g -Xmn4g -XX:PermSize=1g -XX:MaxPermSize=2g -verbose:gc -Xloggc:${CATALINA_HOME}/logs/gc.log\`date +%Y-%m-%d-%H-%M\` -XX:+UseConcMarkSweepGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -noclassgc"`
 
 
 ## server.xml 配置   
