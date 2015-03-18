@@ -23,11 +23,13 @@ tags: [java, jvm, tomcat]
 ## server.xml 配置   
 
     <Connector port="8080" 
-             redirectPort="8443" URIEncoding="UTF-8" 
-             executor="tomcatThreadPool" protocol="org.apache.coyote.http11.Http11NioProtocol" 
-             maxThreads="500" minSpareThreads="50" 
-             connectionTimeout="20000" 
-             enableLookups="false"
-             maxPostSize="0"
-             />
-    <Executor name="tomcatThreadPool" namePrefix="catalina-exec-" maxThreads="500" minSpareThreads="50" maxIdleTime="600000"/>
+               redirectPort="8443" URIEncoding="UTF-8" 
+               executor="tomcatThreadPool" protocol="org.apache.coyote.http11.Http11NioProtocol" 
+               maxThreads="600" minSpareThreads="100" maxSpareThreads="300"
+               keepAliveTimeout="15000" maxKeepAliveRequests="1"
+               connectionTimeout="60000" 
+               compression="off"
+               enableLookups="false"
+               maxPostSize="0"
+               />
+    <Executor name="tomcatThreadPool" namePrefix="catalina-exec-" maxThreads="500" minSpareThreads="20" maxIdleTime="60000"/>
