@@ -1,14 +1,7 @@
 ---
 layout: post
 title: "IDCLOUD持续化集成部署(jenkens docker)"
-description: "文档包含以下内容：
-
- * Jenkins 的 docker 镜像准备
- * 配置Jenkins
- * 创建持续集成任务
- * 启动脚本编写
- * 持续集成
- * 后话"
+description: "文档包含以下内容：Jenkins 的 docker 镜像准备 ,配置Jenkins ,创建持续集成任务 ,启动脚本编写 ,持续集成 ,后话"
 category: 技术
 tags: [docker, jenkins, 持续集成]
 ---
