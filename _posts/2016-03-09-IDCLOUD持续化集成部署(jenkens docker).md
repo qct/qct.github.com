@@ -21,22 +21,27 @@ tags: [docker, jenkins, 持续集成]
 
 本文假设你已经熟悉docker的使用。
 
-从ubuntu 14.04版本制作Jenkins 的 docker 镜像，安装好docker之后，使用 `docker pull jenkinsci/jenkins` 先拉取jenkins 的 docker 镜像到本地。
+从ubuntu 14.04版本制作Jenkins 的 docker 镜像，安装好docker之后，使用   
+`docker pull jenkinsci/jenkins`    
+先拉取jenkins 的 docker 镜像到本地。
 
-修改Jenkins启动端口：
+修改Jenkins启动端口：   
+
 ```
 touch /root/docker_jenkins/Dockerfile
 echo -e "FROM jenkinsci/jenkins \nENV JENKINS_OPTS --httpPort=8765 \nEXPOSE 8765" > /root/docker_jenkins/Dockerfile
 ```
+
 然后build成一个镜像：`cd /root/docker_jenkins/ && docker build -t myjenkins .`
 
 准备一个Jenkins的数据目录，用来备份数据：
+
 ```
 mkdir /jenkins_data_test
 chmod 777 /jenkins_data_test
 ```
 
-然后用刚刚build的镜像启动容器：
+然后用刚刚build的镜像启动容器：   
 `docker run -itd --name myjenkins -p 8765:8765 -v /jenkins_data_test:/var/jenkins_home myjenkins`
 
 之后就可以用 http://ip: port 方式访问Jenkins了，例如：http://192.168.9.112:8765/
@@ -77,7 +82,8 @@ Jenkins的全局设置搞定之后，就可以创建一个持续集成任务了�
 * 在 源码管理 中选择git，在 Repository URL 填上 项目地址，如：http://192.168.9.235:8080/xcloud/idcloud.git ，在 Credentials 中添加你的用户名密码。保证Jenkins可以取到源码。
 * 在 Branches to build 中可以选择你想要在哪个分支上build，这里填 "\*/dev"
 * 在 构建触发器 中选择 Build periodically，在日程表中可以写 cron 表达式，Jenkins会按你写的 cron表达式定时触发构建任务，这里填 "H 1 * * * " ，表示每天凌晨1点触发构建。同时勾选 Poll SCM ，在 Poll SCM 中也可以写cron表达式，Jenkins会按表达式去检查是否有commits，如果有，触发构建任务。这里填 "H/10 * * * *"，表示每10分钟检查一次。
-* 在build里面，可以配置 root pom，这里就填"pom.xml"，意思是项目根目录下的pom.xml。在Goals and options可以填maven的goal和参数，这里填：`-Dmaven.test.skip=true clean package install -P mysql assembly:assembly`
+* 在build里面，可以配置 root pom，这里就填"pom.xml"，意思是项目根目录下的pom.xml。在Goals and options可以填maven的goal和参数，这里填：   
+`-Dmaven.test.skip=true clean package install -P mysql assembly:assembly`
 
 至此，构建任务配置完毕，可以点立即构建来一次构建了，在构建的时候可以点Console Output查看日志，如果构建过程中出错，根据错误提示解决错误。
 
@@ -86,6 +92,7 @@ Jenkins的全局设置搞定之后，就可以创建一个持续集成任务了�
 构建好的文件在：/jenkins_data_test/jobs/idcloud/workspace/target
 
 * 重启dubbo服务，restart-all-service.sh 内容如下：
+
 ```
 #!/bin/bash
 
@@ -118,6 +125,7 @@ done
 ```
 
 * 重启tomcat， sh_restart_qomcat.sh 内容如下：
+
 ```
 #!/bin/bash
 tomcat_home=/usr/local/apache-tomcat-8.0.32
@@ -146,6 +154,7 @@ fi
 用法：sh_restart_qomcat.sh restart
 
 * 重启user-portal，user-portal是部署在nginx中，nginx不需要重启，只要把build好的文件拷过来覆盖就行，restart-user-portal.sh 内容如下：
+
 ```
 #!/bin/bash
 alias cp='cp'
@@ -157,6 +166,7 @@ cp -R /jekins_data/jobs/idcloud/workspace/idcloud-portal/user-portal /usr/share/
 按照之前的配置，Jenkins每10分钟检查一次commit，如果有新commit就触发构建任务，或者每天晚上1点触发构建任务，为了自动化，我们再写crontab让系统每天定时自动发布Jenkins的构建：
 
 `crontab -e` 然后用你习惯的编辑器写入一下内容：
+
 ```
 0 2 * * * /root/restart-all-service.sh
 1 2 * * * /root/sh_restart_qomcat.sh restart
