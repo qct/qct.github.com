@@ -7,7 +7,6 @@ tags: [docker, jenkins, 持续集成]
 ---
 {% include JB/setup %}
 
-# IDCLOUD持续化集成部署(jenkens docker)
 
 文档包含以下内容：
 
