@@ -123,19 +123,17 @@ JB :
 
 
 safe:        false
-auto:        false
-server:      false
-server_port: 4000
+port: 4000
 baseurl:    /
 url: http://qct.github.com
 
 source:      .
 destination: ./_site
-plugins:     ./_plugins
+plugins_dir:     ./_plugins
 
 future:      true
 lsi:         false
-pygments:    false
+highlighter: 'pygments'
 markdown:    kramdown
 permalink:   date
 
