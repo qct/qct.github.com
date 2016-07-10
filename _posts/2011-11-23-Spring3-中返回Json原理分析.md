@@ -1,7 +1,9 @@
 ---
 layout: post
 title: "Spring3.0 中返回Json 原理分析"
-description: "文档包含以下内容：Jenkins 的 docker 镜像准备 ,配置Jenkins ,创建持续集成任务 ,启动脚本编写 ,持续集成 ,后话"
+description: "这里我主要讲怎么样使用spring3.0 返回JSON数据，至于怎么解析JSON请求本文不涉及。可能后续我会写。
+
+最近由于需求改变，我想使用JSON数据作为返回值，折腾了两天，研究spring源码以及作者blog，终于弄明白了个中原委。"
 category: 技术
 tags: [spring, 技术, json, java]
 ---
