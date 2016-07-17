@@ -3,7 +3,7 @@ layout: post
 title: "Head First : Design Patterns  读书笔记"
 description: "1.找出应用中可能变化的部分，把他们独立出来，不要和那些不需要变化的代码混在一起。
 另一种思考方式：把会变化的部分取出并封装起来，以便以后可以轻易地改动或扩充此部分，而不影响不需要变化的其他部分。"
-categories: 技术 java 设计模式
+categories: 技术
 tags: [设计模式]
 ---
 {% include JB/setup %}
