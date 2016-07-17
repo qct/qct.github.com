@@ -13,10 +13,13 @@ tags: [技术, virtualbox, 虚拟机]
 ```
 VBoxManage.exe clonehd "C:\Users\alex\VirtualBox VMs\ubuntu14.04-k8s1\ubuntu14.04-base-1.0-disk1.vmdk" "C:\Users\alex\VirtualBox VMs\ubuntu14.04-k8s1\ubuntu14.04-base-1.0-disk1.vdi" --format VDI
 ```
+
 2. 再用virtualbox自带的管理工具把本地磁盘扩大：
+
 ```
 VBoxManage.exe modifyhd "C:\Users\alex\VirtualBox VMs\ubuntu14.04-k8s1\ubuntu14.04-base-1.0-disk1.vdi" --resize 15000
 ```
+
 上面的意思是把硬盘扩大到15G  
 
 如果是从vmdk转换成vdi格式的硬盘，那么去虚拟机设置里把原来的vmdk硬盘删除，挂上新转换的vdi格式硬盘。
@@ -29,15 +32,19 @@ VBoxManage.exe modifyhd "C:\Users\alex\VirtualBox VMs\ubuntu14.04-k8s1\ubuntu14.
 剩下的步骤不说了，就是 n, p, ....，建立完成之后使用 t 把分区类型改成8e，即LVM。下面假设我们已经建立好了/dev/sda3的LVM分区。
 
 4. 建立物理卷：  
+
 ```
 pvcreate /dev/sda3
 ```
 
 5. 扩展卷组：  
+
 ```
 vgextend ubuntu-vg /dev/sda3
 ```
+
 这里 ubuntu-vg是卷组的名字，可以通过 vgdisplay查询：
+
 ```
 root@k8s1:~# vgdisplay 
   --- Volume group ---
@@ -63,10 +70,13 @@ root@k8s1:~# vgdisplay
 ```
 
 6. 扩展逻辑卷：  
+
 ```
 lvextend -l +100%FREE /dev/ubuntu-vg/root
 ```
+
 这里 /dev/ubuntu-vg/root 是逻辑卷的 path，可以通过lvdisplay查询：
+
 ```
 root@k8s1:~# lvdisplay 
   --- Logical volume ---
@@ -88,6 +98,7 @@ root@k8s1:~# lvdisplay
 ```
 
 7. 最后一步，调整大小：  
+
 ```
 resize2fs /dev/ubuntu-vg/root
 ```
