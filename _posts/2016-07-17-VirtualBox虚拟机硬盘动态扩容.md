@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "VirtualBox虚拟机硬盘动态扩容"
-description: "它是容器运行时为各个主机提供子网互通的虚拟网络。  
-像Google的Kubernetes这样的平台，它假设在集群内部，每个容器（pod）有一个唯一、可路由的IP。这种模型的好处是它减少了端口映射的复杂性。"
+description: "这篇文章目的是扩展虚拟机的根目录，比如原来根目录只有8G，那么把它扩展到15G"
 category: 技术
 tags: [技术, virtualbox, 虚拟机]
 ---
