@@ -133,7 +133,7 @@ plugins_dir:     ./_plugins
 
 future:      true
 lsi:         false
-highlighter: 'rouge'
+highlighter: 'pygments'
 markdown:    kramdown
 permalink:   date
 
